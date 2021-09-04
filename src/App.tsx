@@ -1,8 +1,8 @@
-/* eslint-disable no-undef */
 import React, { useEffect, useState } from 'react'
 
-import ExtensionPage from './components/ExtensionPage'
 import isYoutube from './util/isYoutube'
+import ExtensionPage from './components/ExtensionPage'
+import Header from './components/Header'
 
 function App() {
   const [url, setUrl] = useState('')
@@ -11,8 +11,7 @@ function App() {
 
   useEffect(() => {
     chrome.tabs && chrome.tabs.query(queryInfo, tabs => {
-      const url = tabs[0].url
-      setUrl(url)
+      setUrl(tabs[0].url)
     })
   }, [queryInfo])
 
@@ -24,6 +23,7 @@ function App() {
 
   return (
     <ExtensionPage>
+      <Header />
       <h1>{url}</h1>
       {onYoutubePage && <p>Youtube</p>}
     </ExtensionPage>

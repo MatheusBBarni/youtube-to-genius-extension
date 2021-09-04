@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
 import { ResetCSS } from './resetCSS'
 import { Container, GlobalStyle } from './styles'
 
-function ExtensionPage({ children }) {
+const ExtensionPage: React.FC = ({ children }) => {
   return (
     <>
       <ResetCSS />

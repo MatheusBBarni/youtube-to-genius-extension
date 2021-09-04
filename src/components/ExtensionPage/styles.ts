@@ -4,6 +4,7 @@ export const GlobalStyle = createGlobalStyle`
   :root {
     --youtube-color: #FF0000;
     --genius-color: #FFFC64;
+    --background-color: #101010;
     --font: 'Noto Sans JP', sans-serif;
   }
   * {

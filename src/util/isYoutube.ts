@@ -1,6 +1,6 @@
-import { YT_HOSTNAME, YT_PATHNAME, YT_VIDEO_PARAM } from "../config/constants"
+import { YT_HOSTNAME, YT_PATHNAME, YT_VIDEO_PARAM } from '../config/constants'
 
-const isYoutube = (tabUrl) => {
+const isYoutube = (tabUrl: string): boolean => {
   const url = new URL(tabUrl)
   const { hostname, searchParams, pathname } = url
 
