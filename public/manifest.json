@@ -8,7 +8,8 @@
     "default_title": "Youtube to Genius"
   },
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "https://*/*"
   ],
   "icons": {
     "16": "logo192.png",
