@@ -34,7 +34,7 @@ export const Column = styled.div<{
       @keyframes slide_to_right {
         0%,
         100% {
-          transform: translate(0, 0);
+          transform: translate(-10px, 0);
         }
 
         50% {
@@ -42,7 +42,8 @@ export const Column = styled.div<{
         }
       }
       svg {
-        animation: slide_to_right 1s ease-in-out infinite;
+        transform: translate(-10px, 0);
+        animation: slide_to_right 2s ease-in-out infinite;
       }
     `}
   `}

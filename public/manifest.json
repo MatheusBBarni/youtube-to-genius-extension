@@ -1,15 +1,17 @@
 {
   "short_name": "Youtube to Genius",
   "name": "Youtube to Genius lyrics",
-  "manifest_version": 2,
+  "description": "An extension to search the lyrics of the current music that you are listening on youtube",
+  "manifest_version": 3,
   "version": "1.0",
-  "browser_action": {
+  "action": {
     "default_popup": "index.html",
     "default_title": "Youtube to Genius"
   },
   "permissions": [
     "activeTab",
-    "https://*/*"
+    "https://*/*",
+    "scripting"
   ],
   "icons": {
     "16": "logo16.png",
