@@ -1,7 +1,8 @@
 {
-  "name": "youtube-to-genius-extension",
+  "name": "web-extension",
   "version": "0.1.0",
   "private": false,
+  "author": "matheusbbarni",
   "dependencies": {
     "axios": "^0.21.1",
     "react": "^17.0.2",

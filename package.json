@@ -1,0 +1,16 @@
+{
+  "name": "youtube-to-genius-extension",
+  "version": "1.0.0",
+  "description": "monorepo",
+  "workspaces": [
+    "packages/*"
+  ],
+  "keywords": [],
+  "author": "matheusbbarni",
+  "license": "ISC",
+  "engines": {
+    "node": ">=16.15.1",
+    "pnpm": ">= 7.6.0"
+  },
+  "packageManager": "pnpm@7.6.0"
+}
