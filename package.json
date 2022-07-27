@@ -5,6 +5,11 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "dev": "pnpm --stream -r run dev",
+    "dev:api": "pnpm --stream -r run dev:api",
+    "dev:we": "pnpm --stream -r run dev:we"
+  },
   "keywords": [],
   "author": "matheusbbarni",
   "license": "ISC",
