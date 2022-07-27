@@ -1,3 +1,24 @@
-# Youtube to Genius lyrics - Chrome Extension
+# Youtube to Genius lyrics - Browser extension
 
-An extension to search music lyrics depending on your active youtbe tab. 
+A browser extension for searching the lyrics of the music video that you are watching on youtube.
+
+## Tech Stack
+- Monorepo
+- pnpm
+
+### Front-end - Browser extension
+- ReScript
+- React
+- Axios
+- Tailwind
+- CRA
+- Jest
+- React testing library
+
+### Back-end - Rest API
+- Nodejs
+- Typescript
+- Fastify
+- Genius API
+- SWC
+- Jest
