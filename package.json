@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "pnpm --stream -r run dev",
     "dev:api": "pnpm --stream -r run dev:api",
-    "dev:we": "pnpm --stream -r run dev:we"
+    "dev:we": "pnpm --stream -r run dev:we",
+    "clean": "rm -rf **/node_modules **/.build"
   },
   "keywords": [],
   "author": "matheusbbarni",
