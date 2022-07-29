@@ -12,7 +12,8 @@
     "rescript-js": "^0.7.0"
   },
   "scripts": {
-    "build": "swc src -d public",
+    "build:dev": "webpack --mode development --watch --config webpack.config.js",
+    "build:prod": "webpack --mode productio --config webpack.config.js",
     "dev": "nodemon --ext ts --exec \"npm run build\"",
     "dev:we": "nodemon --ext ts --exec \"npm run build\"",
     "res:build": "yarn res:clean && rescript",

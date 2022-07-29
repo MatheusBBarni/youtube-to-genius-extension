@@ -32,4 +32,4 @@ dist-ssr
 /lib
 .bsb.lock
 *.bs.js
-/public/bundle.js
+/public/bundle.*

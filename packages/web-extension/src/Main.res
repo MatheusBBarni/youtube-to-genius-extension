@@ -1,4 +1,4 @@
-%%raw("import './index.css'")
+%%raw("import './styles.css'")
 
 let root = ReactDOM.querySelector("#app")
 

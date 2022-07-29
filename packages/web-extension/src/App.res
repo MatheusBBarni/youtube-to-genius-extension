@@ -1,4 +1,4 @@
 @react.component
 let make = () => {
-  <div>{"Hello"->React.string}</div>
+  <div className="text-lg text-orange-700">{"Hello"->React.string}</div>
 }
