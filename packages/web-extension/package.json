@@ -14,8 +14,6 @@
   "scripts": {
     "build:dev": "webpack --mode development --watch --config webpack.config.js",
     "build:prod": "webpack --mode productio --config webpack.config.js",
-    "dev": "nodemon --ext ts --exec \"npm run build\"",
-    "dev:we": "nodemon --ext ts --exec \"npm run build\"",
     "res:build": "yarn res:clean && rescript",
     "res:start": "rescript build -w",
     "res:deps": "rescript build -with-deps",
@@ -47,7 +45,6 @@
     "@types/react": "^17.0.19",
     "@types/react-dom": "^17.0.9",
     "css-loader": "^6.7.1",
-    "nodemon": "^2.0.19",
     "postcss": "^8.4.14",
     "postcss-loader": "^7.0.1",
     "postcss-preset-env": "^7.7.2",

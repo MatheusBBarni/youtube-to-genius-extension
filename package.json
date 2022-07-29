@@ -6,9 +6,9 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "pnpm --stream -r run dev",
+    "build": "pnpm --stream -r run build:prod",
     "dev:api": "pnpm --stream -r run dev:api",
-    "dev:we": "pnpm --stream -r run dev:we",
+    "dev:extension": "pnpm --stream -r run build:dev",
     "clean": "rm -rf **/node_modules **/.build"
   },
   "keywords": [],
