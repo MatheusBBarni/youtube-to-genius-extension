@@ -24,3 +24,12 @@ yarn-error.log*
 
 .idea
 .vscode
+
+dist
+dist-ssr
+*.local
+.merlin
+/lib
+.bsb.lock
+*.bs.js
+/public/bundle.*

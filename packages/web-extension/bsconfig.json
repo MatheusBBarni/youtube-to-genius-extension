@@ -1,0 +1,29 @@
+{
+	"name": "web-extension",
+	"sources": [
+		{
+			"dir": "src",
+			"subdirs": true
+		}
+	],
+	"package-specs": [
+		{
+			"module": "es6",
+			"in-source": true
+		}
+	],
+	"suffix": ".bs.js",
+	"bsc-flags": [
+		"-bs-g",
+		"-bs-super-errors",
+		"-open ReScriptJs"
+	],
+	"reason": {
+		"react-jsx": 3
+	},
+	"bs-dependencies": [
+		"@rescript/react",
+		"@ryyppy/rescript-promise",
+		"rescript-js"
+	]
+}
