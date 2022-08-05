@@ -9,6 +9,7 @@
     "build": "pnpm --stream -r run build:prod",
     "dev:api": "pnpm --stream -r run dev:api",
     "dev:extension": "pnpm --stream -r run build:dev",
+    "extension:res:start": "pnpm --stream -r run res:start",
     "clean": "rm -rf **/node_modules **/.build"
   },
   "keywords": [],
