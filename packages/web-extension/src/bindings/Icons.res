@@ -10,5 +10,6 @@ module GeniusIcon = {
 
 module ArrowRightIcon = {
   @module("react-icons/fa") @react.component
-  external make: (~size: float) => React.element = "FaArrowRight"
+  external make: (~size: float, ~color: string=?, ~className: string=?) => React.element =
+    "FaArrowRight"
 }
