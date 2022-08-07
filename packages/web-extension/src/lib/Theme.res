@@ -13,5 +13,5 @@ module Constants = {
   let iconSize = 25.
   let musicSelector = "#container > h1 > yt-formatted-string"
   let musicSelectorSpan = "#container > h1 > yt-formatted-string > span:nth-child(1)"
-  let queryInfo = {active: true, currentWindow: true}
+  let queryInfo: Chrome.queryInfo = {active: true, currentWindow: true}
 }

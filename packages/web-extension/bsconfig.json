@@ -16,7 +16,7 @@
 	"bsc-flags": [
 		"-bs-g",
 		"-bs-super-errors",
-		"-open ReScriptJs"
+		"-open ReScriptJs.Js"
 	],
 	"reason": {
 		"react-jsx": 3
@@ -24,6 +24,7 @@
 	"bs-dependencies": [
 		"@rescript/react",
 		"@ryyppy/rescript-promise",
-		"rescript-js"
+		"rescript-js",
+		"rescript-url"
 	]
 }
