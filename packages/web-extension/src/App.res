@@ -22,14 +22,17 @@ let make = () => {
     None
   })
 
-  <div className="w-[500px] h-[500px]">
-    <Header />
-    <div className="text-lg text-orange-700">
-      {switch page {
-      | Youtube => "Youtube"->React.string
-      | NotYoutube => "NotYoutube"->React.string
-      | Configuration => "Config"->React.string
+  <div className="w-[600px] h-[600px]">
+    <Header
+      position={switch page {
+      | NotYoutube => #fixed
+      | _ => #static
       }}
-    </div>
+    />
+    {switch page {
+    | Youtube => "Youtube"->React.string
+    | NotYoutube => <NotYoutube />
+    | Configuration => "Config"->React.string
+    }}
   </div>
 }

@@ -24,4 +24,7 @@ module.exports = {
       },
     ],
   },
+  watchOptions: {
+    ignored: ['**/src/**/*.res', '**/node_modules'],
+  },
 }

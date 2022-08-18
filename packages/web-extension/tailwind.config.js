@@ -22,7 +22,10 @@ module.exports = {
       ...colors,
       youtube: "#FF0000",
       genius: "#FFFC64",
-    }
+    },
+    fontFamily: {
+      sans: ['Noto Sans JP', 'sans-serif'],
+    },
   },
   variants: {
     extend: {},
