@@ -33,3 +33,5 @@ dist-ssr
 .bsb.lock
 *.bs.js
 /public/bundle.*
+
+.env

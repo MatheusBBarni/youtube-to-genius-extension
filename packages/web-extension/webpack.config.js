@@ -1,4 +1,5 @@
 const path = require('node:path')
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   devtool: 'cheap-module-source-map',
@@ -27,4 +28,7 @@ module.exports = {
   watchOptions: {
     ignored: ['**/src/**/*.res', '**/node_modules'],
   },
+  plugins: [
+    new Dotenv()
+  ]
 }
