@@ -12,5 +12,13 @@ type song = {
   url: string,
 }
 
+type songs = array<song>
+
+type status =
+  | Data(songs)
+  | Loading
+  | Error
+  | NotFound
+
 @module("genius-lyrics-api")
-external searchSong: options => Promise.t<array<song>> = "searchSong"
+external searchSong: options => Promise.t<Js.Nullable.t<songs>> = "searchSong"

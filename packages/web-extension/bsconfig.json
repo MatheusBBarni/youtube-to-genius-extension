@@ -25,6 +25,7 @@
 		"@rescript/react",
 		"@ryyppy/rescript-promise",
 		"rescript-js",
-		"rescript-url"
+		"rescript-url",
+		"rescript-webapi"
 	]
 }

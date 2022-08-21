@@ -23,7 +23,7 @@ module Position = {
 let make = (~position: Position.t=#static) => {
   open Theme
 
-  <div className={`w-full grid grid-cols-3 ${position->Position.toString}`}>
+  <div className={`w-full grid grid-cols-3 max-h-20 ${position->Position.toString}`}>
     <div className={columnClasses(~columnType=Youtube)}>
       <Icons.YoutubeIcon size=Constants.iconSize />
     </div>

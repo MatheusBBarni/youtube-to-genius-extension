@@ -22,7 +22,7 @@ let make = () => {
     None
   })
 
-  <div className="w-[600px] h-[600px]">
+  <div className="w-[600px] h-[600px] overflow-scroll">
     <Header
       position={switch page {
       | NotYoutube => #fixed
@@ -30,7 +30,7 @@ let make = () => {
       }}
     />
     {switch page {
-    | Youtube => "Youtube"->React.string
+    | Youtube => <OnYoutube />
     | NotYoutube => <NotYoutube />
     | Configuration => "Config"->React.string
     }}
