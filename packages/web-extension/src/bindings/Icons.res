@@ -13,3 +13,9 @@ module ArrowRightIcon = {
   external make: (~size: float, ~color: string=?, ~className: string=?) => React.element =
     "FaArrowRight"
 }
+
+module SadTearIcon = {
+  @module("react-icons/fa") @react.component
+  external make: (~size: float, ~color: string=?, ~className: string=?) => React.element =
+    "FaSadTear"
+}
