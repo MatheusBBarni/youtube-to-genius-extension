@@ -10,7 +10,7 @@ let make = (~onSearch: GeniusApi.status => unit) => {
     setMusicName(_ => value)
   }
 
-  let searchMusic = (~name=?) => {
+  let searchMusic = (name: option<string>) => {
     open Promise
 
     let name = switch name {
@@ -66,7 +66,7 @@ let make = (~onSearch: GeniusApi.status => unit) => {
               switch result {
               | Some(value) => {
                   let text = value.result
-                  searchMusic(~name=text)
+                  searchMusic(Some(text))
                   setMusicName(_ => text)
                 }
               | None => setMusicName(_ => "")
@@ -90,6 +90,10 @@ let make = (~onSearch: GeniusApi.status => unit) => {
       className="w-80 h-10 rounded-lg border-2 border-black text-sm text-black font-bold font-sans p-3 placeholder:text-sm focus:outline-none text-center"
     />
     <button
+      onClick={_ => {
+        searchMusic(None)
+        ()
+      }}
       className="w-28 h-10 bg-genius border-black rounded-lg text-sm text-black font-sans font-bold transition-all hover:scale-105">
       {"Search"->React.string}
     </button>
