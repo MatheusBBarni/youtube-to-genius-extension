@@ -13,6 +13,6 @@ module Constants = {
   let iconSize = 30.
   let musicSelector = "#container > h1 > yt-formatted-string"
   let musicSelectorSpan = "#container > h1 > yt-formatted-string > span:nth-child(1)"
-  let queryInfo: Chrome.queryInfo = {active: true, currentWindow: true}
+  let queryInfo: Chrome.Tabs.queryInfo = {active: true, currentWindow: true}
   @val @scope(("process", "env")) external geniusAccesToken: string = "GENIUS_ACCESS_TOKEN"
 }

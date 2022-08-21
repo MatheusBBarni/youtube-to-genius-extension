@@ -1,41 +1,73 @@
-type tabs
 type scripting
 
-type chrome = {
-  tabs: tabs,
-  scripting: scripting,
+module Tabs = {
+  // Reference: https://developer.chrome.com/docs/extensions/reference/tabs/
+  type t
+
+  type tab = {
+    url: string,
+    active: bool,
+    highlighted: bool,
+    id: int,
+  }
+
+  type queryInfo = {active: bool, currentWindow: bool}
+
+  @send external query: (t, queryInfo, array<tab> => unit) => unit = "query"
 }
 
-@val external chrome: chrome = "chrome"
+module Scripting = {
+  // Reference: https://developer.chrome.com/docs/extensions/reference/scripting/
+  type t
 
-type tab = {
-  url: string,
-  active: bool,
-  highlighted: bool,
-  id: int,
+  type target = {tabId: int}
+
+  type func = unit => option<string>
+
+  type scriptingParams = {
+    target: target,
+    func: func,
+  }
+
+  type scriptingResult = {result: string}
+
+  @send
+  external executeScript: (t, scriptingParams, array<scriptingResult> => unit) => unit =
+    "executeScript"
 }
 
-type queryInfo = {active: bool, currentWindow: bool}
+module Storage = {
+  module Data = {
+    let key = "data"
 
-@send external query: (tabs, queryInfo, array<tab> => unit) => unit = "query"
+    type t = {
+      songs: GeniusApi.songs,
+      lastSearch: string,
+    }
 
-type target = {tabId: int}
+    type result = {data: string}
 
-type func = unit => option<string>
+    @scope("JSON") @val
+    external parse: string => t = "parse"
+  }
 
-type scriptingParams = {
-  target: target,
-  func: func,
+  // Reference: https://developer.chrome.com/docs/extensions/reference/storage/
+  @module("./Chrome__Storage.js")
+  external set: (string, string) => unit = "set"
+
+  @module("./Chrome__Storage.js")
+  external get: (string, Data.result => unit) => unit = "get"
 }
 
-type scriptingResult = {result: string}
+type t = {
+  tabs: Tabs.t,
+  scripting: Scripting.t,
+}
 
-@send
-external executeScript: (scripting, scriptingParams, array<scriptingResult> => unit) => unit =
-  "executeScript"
+@val external chrome: t = "chrome"
 
-let getActiveTabs = chrome.tabs->query
-let executeScript = chrome.scripting->executeScript
+let getActiveTabs = chrome.tabs->Tabs.query
+let executeScript = chrome.scripting->Scripting.executeScript
 
 // Why I did this sh*t?
 // Because this function is injected on the tab page

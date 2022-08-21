@@ -9,9 +9,10 @@
     "default_title": "Youtube to Genius"
   },
   "permissions": [
-    "activeTab",
     "https://*/*",
-    "scripting"
+    "activeTab",
+    "scripting",
+    "storage"
   ],
   "icons": {
     "16": "./assets/logo.png",
