@@ -11,21 +11,14 @@ let make = () => {
         ()
       }}
     />
-    <div className="mt-6">
+    <div className="mt-6 w-full">
       {switch search {
-      | Loading => "Loading"->s
-      | Error => "Error"->s
-      | NotFound => "Music not found"->s
+      | Loading => <LoadingState />
+      | Error => <ErrorState />
+      | NotFound => <NotFoundState />
       | Data(songs) =>
         songs->map(song => {
-          <a
-            href=song.url
-            target="_blank"
-            className="p-5 flex gap-5"
-            key={song.id->Belt.Int.toString}>
-            <img src=song.albumArt alt=song.title className="h-10 rounded" />
-            <p className="font-sans text-black font-bold text-lg"> {song.title->s} </p>
-          </a>
+          <SongLink song />
         })
       }}
     </div>
