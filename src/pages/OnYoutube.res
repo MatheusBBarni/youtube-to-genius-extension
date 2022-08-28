@@ -4,7 +4,7 @@ open Render
 let make = () => {
   let (search, setSearch) = React.useState(_ => GeniusApi.Loading)
 
-  <div className="w-full flex flex-column flex-wrap">
+  <div className="w-full flex flex-column flex-wrap mt-20">
     <SearchEngine
       onSearch={event => {
         setSearch(_ => event)
@@ -18,7 +18,7 @@ let make = () => {
       | NotFound => <NotFoundState />
       | Data(songs) =>
         songs->map(song => {
-          <SongLink song />
+          <SongLink key={song.id->Belt.Int.toString} song />
         })
       }}
     </div>

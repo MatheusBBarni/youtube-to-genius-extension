@@ -1,5 +1,10 @@
 open Theme.Constants
 
+/*
+  Salvar o que foi buscado no storage e o resultado:
+  - caso o usuario não mude de tab e reabra a extensão não refazer a busca.
+*/
+
 @react.component
 let make = (~onSearch: GeniusApi.status => unit) => {
   let (musicName, setMusicName) = React.useState(_ => "")
@@ -82,7 +87,7 @@ let make = (~onSearch: GeniusApi.status => unit) => {
     None
   })
 
-  <div className="w-full flex justify-around mt-4">
+  <div className="w-full flex justify-evenly mt-4">
     <input
       value=musicName
       onChange=handleInputChange

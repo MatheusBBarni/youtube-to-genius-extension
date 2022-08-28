@@ -31,3 +31,9 @@ module TbMusicOffIcon = {
   external make: (~size: float, ~color: string=?, ~className: string=?) => React.element =
     "TbMusicOff"
 }
+
+module GearFillOffIcon = {
+  @module("react-icons/bs") @react.component
+  external make: (~size: float, ~color: string=?, ~className: string=?) => React.element =
+    "BsFillGearFill"
+}

@@ -1,8 +1,10 @@
-type page = Youtube | NotYoutube | Configuration
+open PageContext
 
 @react.component
 let make = () => {
-  let (page, setPage) = React.useState(_ => NotYoutube)
+  let (page, setPage) = Context.use()
+
+  setPage(_ => Youtube)
 
   React.useEffect0(_ => {
     Chrome.getActiveTabs(Theme.Constants.queryInfo, tabs => {
@@ -16,23 +18,25 @@ let make = () => {
       }
       let isYoutube = Util.isYoutube(~tabUrl=url)
 
-      setPage(_ => isYoutube ? Youtube : NotYoutube)
+      // setPage(_ => isYoutube ? Youtube : NotYoutube)
     })
 
     None
   })
 
-  <div className="w-[600px] h-[600px] overflow-scroll">
-    <Header
-      position={switch page {
-      | NotYoutube => #fixed
-      | _ => #static
-      }}
-    />
-    {switch page {
-    | Youtube => <OnYoutube />
-    | NotYoutube => <NotYoutube />
-    | Configuration => "Config"->React.string
-    }}
-  </div>
+  <Provider>
+    <div className="w-[600px] h-[600px] overflow-scroll">
+      <Header position=#fixed />
+      <div className="w-full h-full flex flex-col">
+        <button className="absolute right-3 top-20" onClick={_ => setPage(_ => Configuration)}>
+          <Icons.GearFillOffIcon size=30. />
+        </button>
+        {switch page {
+        | Youtube => <OnYoutube />
+        | NotYoutube => <NotYoutube />
+        | Configuration => <Configuration />
+        }}
+      </div>
+    </div>
+  </Provider>
 }
