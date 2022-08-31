@@ -19,3 +19,21 @@ module SadTearIcon = {
   external make: (~size: float, ~color: string=?, ~className: string=?) => React.element =
     "FaSadTear"
 }
+
+module ErrorAltIcon = {
+  @module("react-icons/bi") @react.component
+  external make: (~size: float, ~color: string=?, ~className: string=?) => React.element =
+    "BiErrorAlt"
+}
+
+module TbMusicOffIcon = {
+  @module("react-icons/tb") @react.component
+  external make: (~size: float, ~color: string=?, ~className: string=?) => React.element =
+    "TbMusicOff"
+}
+
+module GearFillOffIcon = {
+  @module("react-icons/bs") @react.component
+  external make: (~size: float, ~color: string=?, ~className: string=?) => React.element =
+    "BsFillGearFill"
+}
