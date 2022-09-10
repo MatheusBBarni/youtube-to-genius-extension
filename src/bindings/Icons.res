@@ -37,3 +37,9 @@ module GearFillOffIcon = {
   external make: (~size: float, ~color: string=?, ~className: string=?) => React.element =
     "BsFillGearFill"
 }
+
+module ArrowBackIcon = {
+  @module("react-icons/tb") @react.component
+  external make: (~size: float, ~color: string=?, ~className: string=?) => React.element =
+    "TbArrowBack"
+}

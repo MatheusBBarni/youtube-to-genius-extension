@@ -1,12 +1,8 @@
-open PageContext
-
 @react.component
 let make = () => {
-  let (page, setPage) = Context.use()
+  let (page, setPage) = PageContext.Context.use()
 
-  setPage(_ => Youtube)
-
-  React.useEffect0(_ => {
+  let getActiveTabs = () => {
     Chrome.getActiveTabs(Theme.Constants.queryInfo, tabs => {
       let url = {
         let tab = tabs->Array.pop
@@ -18,25 +14,39 @@ let make = () => {
       }
       let isYoutube = Util.isYoutube(~tabUrl=url)
 
-      // setPage(_ => isYoutube ? Youtube : NotYoutube)
+      Console.log(isYoutube)
+
+      setPage(_ => isYoutube ? Youtube : NotYoutube)
     })
+  }
+
+  React.useEffect0(_ => {
+    getActiveTabs()
 
     None
   })
 
-  <Provider>
-    <div className="w-[600px] h-[600px] overflow-scroll">
-      <Header position=#fixed />
-      <div className="w-full h-full flex flex-col">
-        <button className="absolute right-3 top-20" onClick={_ => setPage(_ => Configuration)}>
-          <Icons.GearFillOffIcon size=30. />
-        </button>
+  let handleConfigClick = _ => {
+    switch page {
+    | Configuration => getActiveTabs()
+    | _ => setPage(_ => Configuration)
+    }
+  }
+
+  <div className="w-[600px] h-[600px] overflow-scroll">
+    <Header position=#fixed />
+    <div className="w-full h-full flex flex-col">
+      <button className="absolute left-3 top-20" onClick={handleConfigClick}>
         {switch page {
-        | Youtube => <OnYoutube />
-        | NotYoutube => <NotYoutube />
-        | Configuration => <Configuration />
+        | Configuration => <Icons.ArrowBackIcon size=30. />
+        | _ => <Icons.GearFillOffIcon size=30. />
         }}
-      </div>
+      </button>
+      {switch page {
+      | Youtube => <OnYoutube />
+      | NotYoutube => <NotYoutube />
+      | Configuration => <Configuration />
+      }}
     </div>
-  </Provider>
+  </div>
 }
