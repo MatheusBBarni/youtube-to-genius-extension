@@ -11,13 +11,15 @@
   "permissions": [
     "https://*/*",
     "activeTab",
-    "scripting",
-    "storage"
+    "scripting"
   ],
   "icons": {
-    "16": "./assets/logo.png",
-    "48": "./assets/logo.png",
-    "128": "./assets/logo.png"
+    "8": "./assets/logo-8.png",
+    "16": "./assets/logo-16.png",
+    "32": "./assets/logo-32.png",
+    "48": "./assets/logo-48.png",
+    "128": "./assets/logo-128.png",
+    "800": "./assets/logo.png"
   },
   "matches": [
     "*://youtube.com/*"

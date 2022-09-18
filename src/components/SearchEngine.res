@@ -1,10 +1,5 @@
 open Theme.Constants
 
-/*
-  Salvar o que foi buscado no storage e o resultado:
-  - caso o usuario não mude de tab e reabra a extensão não refazer a busca.
-*/
-
 @react.component
 let make = (~onSearch: GeniusApi.status => unit) => {
   let (musicName, setMusicName) = React.useState(_ => "")

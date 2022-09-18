@@ -4,7 +4,7 @@ open Render
 let make = () => {
   let (search, setSearch) = React.useState(_ => GeniusApi.Loading)
 
-  <div className="w-full flex flex-column flex-wrap mt-20">
+  <div className="w-full flex flex-column flex-wrap mt-24">
     <SearchEngine
       onSearch={event => {
         setSearch(_ => event)
