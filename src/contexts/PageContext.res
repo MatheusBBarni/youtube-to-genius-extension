@@ -1,4 +1,4 @@
-type page = Youtube | NotYoutube | Configuration
+type page = Youtube | NotYoutube
 
 module Context = {
   include ReactContext.Make({

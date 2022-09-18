@@ -36,29 +36,6 @@ module Scripting = {
     "executeScript"
 }
 
-module Storage = {
-  module Data = {
-    let key = "data"
-
-    type t = {
-      songs: GeniusApi.songs,
-      lastSearch: string,
-    }
-
-    type result = {data: string}
-
-    @scope("JSON") @val
-    external parse: string => t = "parse"
-  }
-
-  // Reference: https://developer.chrome.com/docs/extensions/reference/storage/
-  @module("./Chrome__Storage.js")
-  external set: (string, string) => unit = "set"
-
-  @module("./Chrome__Storage.js")
-  external get: (string, Data.result => unit) => unit = "get"
-}
-
 type t = {
   tabs: Tabs.t,
   scripting: Scripting.t,
