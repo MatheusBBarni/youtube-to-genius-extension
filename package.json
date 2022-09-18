@@ -17,7 +17,7 @@
   },
   "scripts": {
     "build:dev": "webpack --mode development --watch --config webpack.config.js",
-    "build:prod": "webpack --mode productio --config webpack.config.js",
+    "build:prod": "webpack --mode production --config webpack.config.js",
     "res:build": "yarn res:clean && rescript",
     "res:start": "rescript build -w",
     "res:deps": "rescript build -with-deps",
