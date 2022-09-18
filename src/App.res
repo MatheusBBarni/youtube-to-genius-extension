@@ -28,6 +28,7 @@ let make = () => {
 
   <div className="w-[600px] h-[600px] overflow-scroll">
     <Header position=#fixed />
+    <Trademark />
     <div className="w-full h-full flex flex-col">
       {switch page {
       | Youtube => <OnYoutube />
